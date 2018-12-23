@@ -1,4 +1,5 @@
-(ns clojurewebapplication.core)
+(ns clojurewebapplication.core
+  )
 
 (defn foo
   "I don't do a whole lot."
