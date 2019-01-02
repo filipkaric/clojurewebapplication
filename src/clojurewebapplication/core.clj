@@ -1,7 +1,17 @@
 (ns clojurewebapplication.core
+  (:use compojure.core)
+  (:require [compojure.handler :as handler]
+            [compojure.route :as route]
+            [ring.middleware.basic-authentication :refer :all]
+            )
   )
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defroutes public-routes
+           )
+
+(defroutes app-routes
+           public-routes
+           (route/not-found "404. Page not found"))
+
+(def -main
+  (handler/site app-routes))
