@@ -3,10 +3,15 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.middleware.basic-authentication :refer :all]
+            [clojurewebapplication.controller.controller :as controller]
             )
   )
 
 (defroutes public-routes
+           (GET "/homepage" [] (controller/home))
+           (route/resources "/")
+           (GET "/allMeals" [] (controller/allMeals))
+           (route/resources "/")
            )
 
 (defroutes app-routes

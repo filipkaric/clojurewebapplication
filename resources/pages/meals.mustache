@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title>Clojure</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<table id="datatable-meals">
+    <thead>
+    <tr>
+        <th>Meal id</th>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Proteins</th>
+        <th>Carbohydrates</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {{#meal}}
+        <tr data-row-subject-id="">
+            <td>{{mealid}}</td>
+            <td>{{name}}</td>
+            <td>{{kcal/kg}}</td>
+            <td>{{proteins/kg}}</td>
+            <td>{{carbohydrates/kg}}</td>
+        </tr>
+    {{/meal}}
+    </tbody>
+</table>
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
