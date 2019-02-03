@@ -8,6 +8,8 @@
   )
 
 (defroutes public-routes
+           (GET "/" [] (controller/home))
+           (route/resources "/")
            (GET "/homepage" [] (controller/home))
            (route/resources "/")
            (GET "/allMeals" [] (controller/allMeals))
