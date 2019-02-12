@@ -5,38 +5,76 @@
 
     <title>Clojure</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ scripts/css/bootstrap.css }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
 
 </head>
 
 <body>
+<nav class="navbar navbar-expand-sm   navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<table id="datatable-meals">
-    <thead>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/allMeals">All meals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Call</a>
+            </li>
+        </ul>
+        <div class="social-part">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+        </div>
+    </div>
+</nav>
+<!-- Content -->
+
+<table id="datatable-meals" class="table table-bordered table-hover">
+    <thead class="thead-light" >
     <tr>
-        <th>Meal id</th>
-        <th>Name</th>
-        <th>Calories</th>
-        <th>Proteins</th>
-        <th>Carbohydrates</th>
+        <th scope="col">Meal id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Calories</th>
+        <th scope="col">Proteins</th>
+        <th scope="col">Carbohydrates</th>
+        <th scope="col">Fats</th>
+        <th scope="col">Meal type</th>
     </tr>
     </thead>
 
     <tbody>
 
     {{#meal}}
-        <tr data-row-subject-id="">
-            <td>{{mealid}}</td>
-            <td>{{name}}</td>
-            <td>{{kcal/kg}}</td>
-            <td>{{proteins/kg}}</td>
-            <td>{{carbohydrates/kg}}</td>
+        <tr>
+            <td>{{meal_id}}</td>
+            <td>{{meal_name}}</td>
+            <td>{{kcal_100g}}</td>
+            <td>{{proteins_100g}}</td>
+            <td>{{carbs_100g}}</td>
+            <td>{{fats_100g}}</td>
+            <td>{{meal_type}}</td>
         </tr>
     {{/meal}}
     </tbody>
 </table>
 
 <!-- Bootstrap -->
-<script src="js/bootstrap.js"></script>
+<script src="{{ scripts/js/bootstrap.js }}"></script>
+
 </body>
 </html>
+
+
