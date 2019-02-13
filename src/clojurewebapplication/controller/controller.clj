@@ -16,3 +16,6 @@
 
 (defn allMeals []
   (render-template "meals" {:meal (meal-domain/allMeals)}))
+
+(defn updateMeal [id]
+  (render-template "updateMeal" {:meal (meal-domain/get id)}))
