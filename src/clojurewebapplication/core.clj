@@ -3,6 +3,8 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.middleware.basic-authentication :refer :all]
+            [ring.util.response :as resp]
+            [clojurewebapplication.domain.meal :as meal-domain]
             [clojurewebapplication.controller.controller :as controller]
             )
   )
@@ -14,6 +16,13 @@
            (route/resources "/")
            (GET "/allMeals" [] (controller/allMeals))
            (route/resources "/")
+
+           (GET "/domain/meals/:id/delete" [id]
+             (do (meal-domain/delete id)
+                 (resp/redirect "/allMeals")))
+
+           (GET "/domain/meals/:id/update" [id]
+             (controller/updateMeal id))
            )
 
 (defroutes app-routes
