@@ -23,6 +23,10 @@
 
            (GET "/domain/meals/:id/update" [id]
              (controller/updateMeal id))
+
+           (POST "/domain/meals/:meal_id/update" [& params]
+             (do (meal-domain/update (:meal_id params) params)
+                 (resp/redirect "/allMeals")))
            )
 
 (defroutes app-routes
