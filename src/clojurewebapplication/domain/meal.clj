@@ -25,3 +25,7 @@
 
 (defn update [id params]
   (jdbc/update! mysql-db :meal params (sql/where {:meal_id id})))
+
+(defn insertMeal
+  [params]
+  (jdbc/insert! mysql-db :meal params))

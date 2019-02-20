@@ -19,3 +19,6 @@
 
 (defn updateMeal [id]
   (render-template "updateMeal" {:meal (meal-domain/get id)}))
+
+(defn insertMeal []
+  (render-template "insertMeal" {}))

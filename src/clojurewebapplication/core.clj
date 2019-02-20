@@ -16,6 +16,8 @@
            (route/resources "/")
            (GET "/allMeals" [] (controller/allMeals))
            (route/resources "/")
+           (GET "/insertMeal" [] (controller/insertMeal))
+           (route/resources "/")
 
            (GET "/domain/meals/:id/delete" [id]
              (do (meal-domain/delete id)
@@ -26,6 +28,10 @@
 
            (POST "/domain/meals/:meal_id/update" [& params]
              (do (meal-domain/update (:meal_id params) params)
+                 (resp/redirect "/allMeals")))
+
+           (POST "/domain/meals/insert" [& params]
+             (do (meal-domain/insertMeal params)
                  (resp/redirect "/allMeals")))
            )
 
