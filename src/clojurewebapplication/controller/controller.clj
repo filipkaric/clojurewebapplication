@@ -15,10 +15,12 @@
   (render-template "homepage" {}))
 
 (defn allMeals []
-  (render-template "meals" {:meal (meal-domain/allMeals)}))
+  (render-template "meals" {:meal (meal-domain/allMeals)
+                            :meal_type (meal-domain/allMealTypes)}))
 
 (defn updateMeal [id]
-  (render-template "updateMeal" {:meal (meal-domain/get id)}))
+  (render-template "updateMeal" {:meal (meal-domain/get id)
+                                 :meal_type (meal-domain/allMealTypes)}))
 
 (defn insertMeal []
-  (render-template "insertMeal" {}))
+  (render-template "insertMeal" {:meal_type (meal-domain/allMealTypes)}))

@@ -15,6 +15,10 @@
   (jdbc/query mysql-db
                ["SELECT * FROM meal m"]))
 
+(defn allMealTypes []
+  (jdbc/query mysql-db
+              ["SELECT * FROM meal_type mt"]))
+
 (defn get [id]
   (first (jdbc/query mysql-db
                      ["SELECT * FROM meal WHERE meal_id = ?" id])))
