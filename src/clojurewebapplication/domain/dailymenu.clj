@@ -19,6 +19,10 @@
   (jdbc/query mysql-db
               ["SELECT * FROM daily_menu_type dmt"]))
 
+(defn allChefs []
+  (jdbc/query mysql-db
+              ["SELECT * FROM chef c"]))
+
 (defn getMenu [id]
   (first (jdbc/query mysql-db
                      ["SELECT * FROM daily_menu WHERE menu_id = ?" id])))

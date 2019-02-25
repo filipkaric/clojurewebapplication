@@ -40,7 +40,7 @@
     </div>
 </nav>
 <!-- Content -->
-<a class="button" href="/insertMenu">Insert menu</a>
+<a class="button" href="/insertMeal">Insert meal</a>
 <table id="datatable-meals" class="table table-bordered table-hover">
     <thead class="thead-light" >
     <tr>
@@ -59,12 +59,21 @@
         <tr>
             <td>{{menu_id}}</td>
             <td>{{name}}</td>
-            <td>{{type}}</td>
+            <td>
+            {{#menu_type}}
+                {{type}}
+                {{menu_type_name}}
+            {{/menu_type}}
+
+            </td>
             <td>{{chef}}</td>
             <td><a href="/domain/meals/{{meal_id}}/update"><i class="fa fa-pencil-square-o"></i></a></td>
             <td><a href="/domain/meals/{{meal_id}}/delete"><i class="fa fa-remove"></i></a></td>
         </tr>
     {{/menu}}
+    {{#menu_type}}
+        <p>{{menu_type_name}}</p>
+    {{/menu_type}}
     </tbody>
 </table>
 

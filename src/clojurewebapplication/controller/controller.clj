@@ -28,7 +28,8 @@
 
 (defn allMenus []
   (render-template "menus" {:menu (menu-domain/allMenus)
-                            :menu_type (menu-domain/allMenuTypes)}))
+                            :menu_type (menu-domain/allMenuTypes)
+                            :chef (menu-domain/allChefs)}))
 
 (defn updateMenu [id]
   (render-template "updateMeal" {:meal (meal-domain/get id)
