@@ -26,9 +26,6 @@
                 <a class="nav-link" href="/allMeals">All meals</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/allMenus">All menus</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
             </li>
             <li class="nav-item">
@@ -42,9 +39,38 @@
         </div>
     </div>
 </nav>
+<!-- Content -->
+<a class="button" href="/insertMenu">Insert menu</a>
+<table id="datatable-meals" class="table table-bordered table-hover">
+    <thead class="thead-light" >
+    <tr>
+        <th scope="col">Menu id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Chef</th>
+        <th scope="col">Update &nbsp;</th>
+        <th scope="col">Delete &nbsp;</th>
+    </tr>
+    </thead>
 
-        <!-- Bootstrap -->
-<script src="{{ scripts/js/bootstrap.js }}" ></script>
+    <tbody>
+
+    {{#menu}}
+        <tr>
+            <td>{{menu_id}}</td>
+            <td>{{name}}</td>
+            <td>{{type}}</td>
+            <td>{{chef}}</td>
+            <td><a href="/domain/meals/{{meal_id}}/update"><i class="fa fa-pencil-square-o"></i></a></td>
+            <td><a href="/domain/meals/{{meal_id}}/delete"><i class="fa fa-remove"></i></a></td>
+        </tr>
+    {{/menu}}
+    </tbody>
+</table>
+
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
 
 </body>
 </html>

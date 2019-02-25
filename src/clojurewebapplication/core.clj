@@ -5,6 +5,7 @@
             [ring.middleware.basic-authentication :refer :all]
             [ring.util.response :as resp]
             [clojurewebapplication.domain.meal :as meal-domain]
+            [clojurewebapplication.domain.dailymenu :as menu-domain]
             [clojurewebapplication.controller.controller :as controller]
             )
   )
@@ -17,6 +18,10 @@
            (GET "/allMeals" [] (controller/allMeals))
            (route/resources "/")
            (GET "/insertMeal" [] (controller/insertMeal))
+           (route/resources "/")
+           (GET "/allMenus" [] (controller/allMenus))
+           (route/resources "/")
+           (GET "/insertMenu" [] (controller/insertMenu))
            (route/resources "/")
 
            (GET "/domain/meals/:id/delete" [id]
@@ -33,6 +38,21 @@
            (POST "/domain/meals/insert" [& params]
              (do (meal-domain/insertMeal params)
                  (resp/redirect "/allMeals")))
+
+           (GET "/domain/menus/:id/delete" [id]
+             (do (menu-domain/deleteMenu id)
+                 (resp/redirect "/allMenus")))
+
+           (GET "/domain/menus/:id/update" [id]
+             (controller/updateMenu id))
+
+           (POST "/domain/menus/:menu_id/update" [& params]
+             (do (menu-domain/updateMenu (:meal_id params) params)
+                 (resp/redirect "/allMenus")))
+
+           (POST "/domain/menus/insert" [& params]
+             (do (menu-domain/insertMenu params)
+                 (resp/redirect "/allMenus")))
            )
 
 (defroutes app-routes

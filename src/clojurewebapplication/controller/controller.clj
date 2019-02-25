@@ -2,6 +2,7 @@
   (:require
     [clostache.parser :as clostache]
     [clojurewebapplication.domain.meal :as meal-domain]
+    [clojurewebapplication.domain.dailymenu :as menu-domain]
     ))
 
 (defn read-template [template-name]
@@ -23,4 +24,15 @@
                                  :meal_type (meal-domain/allMealTypes)}))
 
 (defn insertMeal []
+  (render-template "insertMeal" {:meal_type (meal-domain/allMealTypes)}))
+
+(defn allMenus []
+  (render-template "menus" {:menu (menu-domain/allMenus)
+                            :menu_type (menu-domain/allMenuTypes)}))
+
+(defn updateMenu [id]
+  (render-template "updateMeal" {:meal (meal-domain/get id)
+                                 :meal_type (meal-domain/allMealTypes)}))
+
+(defn insertMenu []
   (render-template "insertMeal" {:meal_type (meal-domain/allMealTypes)}))
