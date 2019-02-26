@@ -32,8 +32,8 @@
                  ["DELETE FROM daily_menu WHERE menu_id = ?" id]))
 
 (defn updateMenu [id params]
-  (jdbc/update! mysql-db :menu params (sql/where {:menu_id id})))
+  (jdbc/update! mysql-db :daily_menu params (sql/where {:menu_id id})))
 
 (defn insertMenu
   [params]
-  (jdbc/insert! mysql-db :menu params))
+  (jdbc/insert! mysql-db :daily_menu params))

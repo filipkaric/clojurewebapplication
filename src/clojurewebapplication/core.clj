@@ -47,7 +47,7 @@
              (controller/updateMenu id))
 
            (POST "/domain/menus/:menu_id/update" [& params]
-             (do (menu-domain/updateMenu (:meal_id params) params)
+             (do (menu-domain/updateMenu (:menu_id params) params)
                  (resp/redirect "/allMenus")))
 
            (POST "/domain/menus/insert" [& params]
