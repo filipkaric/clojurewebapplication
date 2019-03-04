@@ -50,6 +50,7 @@
         <th scope="col">Chef</th>
         <th scope="col">Update &nbsp;</th>
         <th scope="col">Delete &nbsp;</th>
+        <th scope="col">Print &nbsp;</th>
     </tr>
     </thead>
 
@@ -63,11 +64,9 @@
             <td>{{chef}}</td>
             <td><a href="/domain/menus/{{menu_id}}/update"><i class="fa fa-pencil-square-o"></i></a></td>
             <td><a href="/domain/menus/{{menu_id}}/delete"><i class="fa fa-remove"></i></a></td>
+            <td><a href="/domain/menus/{{menu_id}}/show"><i class="fa fa-remove"></i></a></td>
         </tr>
     {{/menu}}
-    {{#menu_type}}
-        <p>{{menu_type_name}}</p>
-    {{/menu_type}}
     </tbody>
 </table>
 

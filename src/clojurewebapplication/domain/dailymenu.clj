@@ -34,6 +34,7 @@
 (defn updateMenu [id params]
   (jdbc/update! mysql-db :daily_menu params (sql/where {:menu_id id})))
 
+
 (defn insertMenu
   [params]
   (jdbc/insert! mysql-db :daily_menu params))

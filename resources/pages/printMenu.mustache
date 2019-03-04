@@ -38,15 +38,15 @@
 </nav>
 <!-- Content -->
 <div class="col-md-3 center">
-    <h3>Update menu</h3>
-    <form action="/domain/menus/insert" method="post">
+    <h3>Show menu</h3>
+    <form>
         <div class="form-group">
             <label>Menu id</label>
-            <input type="text" class="form-control" name="menu_id"/>
+            <input type="text" class="form-control" name="menu_id" value="{{menu.menu_id}}" readonly/>
         </div>
         <div class="form-group">
             <label>Menu name</label>
-            <input type="text" class="form-control" name="name"/>
+            <input type="text" class="form-control" name="name" value="{{menu.name}}" readonly/>
         </div>
         <div class="form-group">
             <label>Menu type</label>
@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             <label>Date created</label>
-            <input type="text" class="form-control" name="date_created"/>
+            <input type="text" class="form-control" name="date_created" value="{{menu.date_created}}" readonly/>
         </div>
         <div class="form-group">
             <label>Chef</label>
@@ -68,10 +68,17 @@
                 {{/chef}}
             </select>
         </div>
-        <button type="submit" class="btn btn-danger">Save</button>
+        <button type="button" class="btn btn-danger" onclick="printMenu()">Print</button>
     </form>
 </div>
 <!-- Bootstrap -->
 <script src="{{ scripts/js/bootstrap.js }}"></script>
 </body>
 </html>
+
+<script>
+    function printMenu()
+    {
+    window.print();
+    }
+</script>

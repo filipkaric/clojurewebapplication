@@ -35,6 +35,11 @@
   (render-template "updateMenu" {:menu (menu-domain/getMenu id)
                                  :menu_type (menu-domain/allMenuTypes)
                                  :chef (menu-domain/allChefs)}))
+(defn showMenu [id]
+  (render-template "printMenu" {:menu (menu-domain/getMenu id)
+                                :menu_type (menu-domain/allMenuTypes)
+                                :chef (menu-domain/allChefs)}))
+
 
 (defn insertMenu []
   (render-template "insertMenu" {:meal_type (meal-domain/allMealTypes)

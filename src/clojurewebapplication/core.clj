@@ -31,6 +31,7 @@
            (GET "/domain/meals/:id/update" [id]
              (controller/updateMeal id))
 
+
            (POST "/domain/meals/:meal_id/update" [& params]
              (do (meal-domain/update (:meal_id params) params)
                  (resp/redirect "/allMeals")))
@@ -50,10 +51,15 @@
              (do (menu-domain/updateMenu (:menu_id params) params)
                  (resp/redirect "/allMenus")))
 
+
            (POST "/domain/menus/insert" [& params]
              (do (menu-domain/insertMenu params)
                  (resp/redirect "/allMenus")))
+
+           (GET "/domain/menus/:id/show" [id]
+             (controller/showMenu id))
            )
+
 
 (defroutes app-routes
            public-routes
