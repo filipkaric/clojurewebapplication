@@ -15,6 +15,9 @@
 (defn home []
   (render-template "homepage" {}))
 
+(defn about []
+  (render-template "about" {}))
+
 (defn allMeals []
   (render-template "meals" {:meal (meal-domain/allMeals)
                             :meal_type (meal-domain/allMealTypes)}))

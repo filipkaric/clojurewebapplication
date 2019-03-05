@@ -23,6 +23,8 @@
            (route/resources "/")
            (GET "/insertMenu" [] (controller/insertMenu))
            (route/resources "/")
+           (GET "/about" [] (controller/about))
+           (route/resources "/")
 
            (GET "/domain/meals/:id/delete" [id]
              (do (meal-domain/delete id)

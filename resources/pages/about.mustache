@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Clojure/InsertMenu</title>
+
+
+    <title>About</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
@@ -36,43 +39,14 @@
         </div>
     </div>
 </nav>
-<!-- Content -->
-<div class="col-md-3 center">
-    <h3>Update menu</h3>
-    <form action="/domain/menus/insert" method="post">
-        <div class="form-group">
-            <label>Menu id</label>
-            <input type="text" class="form-control" name="menu_id"/>
-        </div>
-        <div class="form-group">
-            <label>Menu name</label>
-            <input type="text" class="form-control" name="name"/>
-        </div>
-        <div class="form-group">
-            <label>Menu type</label>
-            <select name="type" class="form-control">
-                {{#menu_type}}
-                    <option value="{{menu_type_id}}">{{menu_type_name}}</option>
-                {{/menu_type}}
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Date created</label>
-            <input type="text" class="form-control" name="date_created"/>
-        </div>
-        <div class="form-group">
-            <label>Chef</label>
-            <select name="chef" class="form-control">
-                {{#chef}}
-                    <option value="{{chef_id}}">{{name}}</option>
-                {{/chef}}
-            </select>
-        </div>
-        <button type="submit" class="btn btn-danger">Save</button>
-    </form>
+<div>
+    <p>This is a simple Clojure Web Application done with ring API.</p>
+    <p>Link to the git repository is <a href="https://github.com/filipkaric/clojurewebapplication">here</a></p>
 </div>
+
 <!-- Bootstrap -->
 <script src="scripts/js/bootstrap.js" ></script>
 <link rel="stylesheet" href="scripts/css/clojure.css">
+
 </body>
 </html>
