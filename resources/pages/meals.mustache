@@ -40,8 +40,9 @@
     </div>
 </nav>
 <!-- Content -->
-<a class="button" href="/insertMeal">Insert meal</a>
-<table id="datatable-meals" class="table table-bordered table-hover">
+<div id="tableDiv" class="tableDiv">
+    <a class="button btn btn-primary" href="/insertMeal">Insert meal</a>
+    <table id="datatable-meals" class="table table-bordered table-hover">
     <thead class="thead-light" >
     <tr>
         <th scope="col">Meal id</th>
@@ -73,7 +74,7 @@
     {{/meal}}
     </tbody>
 </table>
-
+</div>
 <!-- Bootstrap -->
 <script src="scripts/js/bootstrap.js" ></script>
 <link rel="stylesheet" href="scripts/css/clojure.css">

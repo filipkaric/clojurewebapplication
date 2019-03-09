@@ -40,7 +40,8 @@
     </div>
 </nav>
 <!-- Content -->
-<a class="button" href="/insertMenu">Insert menu</a>
+<div id="tableDiv" class="tableDiv">
+<a class="button btn btn-primary" href="/insertMenu">Insert menu</a>
 <table id="datatable-meals" class="table table-bordered table-hover">
     <thead class="thead-light" >
     <tr>
@@ -64,15 +65,16 @@
             <td>{{chef}}</td>
             <td><a href="/domain/menus/{{menu_id}}/update"><i class="fa fa-pencil-square-o"></i></a></td>
             <td><a href="/domain/menus/{{menu_id}}/delete"><i class="fa fa-remove"></i></a></td>
-            <td><a href="/domain/menus/{{menu_id}}/show"><i class="fa fa-remove"></i></a></td>
+            <td><a href="/domain/menus/{{menu_id}}/show"><i class="fa fa-print"></i></a></td>
         </tr>
     {{/menu}}
     </tbody>
 </table>
-
+</div>
 
 <!-- Bootstrap -->
-<script src="js/bootstrap.js"></script>
+<script src="scripts/js/bootstrap.js" ></script>
+<link rel="stylesheet" href="scripts/css/clojure.css">
 
 </body>
 </html>

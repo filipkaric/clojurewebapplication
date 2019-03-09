@@ -4,3 +4,27 @@
   border: 3px solid green;
   padding: 10px;
 }
+
+.tableDiv{
+    width:80%;
+    margin:0 auto;
+}
+
+.backgroundImage{
+    width:100%;
+}
+
+.bodyImage{
+    background-image: url('img/restaurant.jpeg');
+    width: 100%;
+}
+
+.text400White{
+    font-size: 400%;
+    color:white;
+}
+
+.text200White{
+    font-size: 400%;
+    color:white;
+}
