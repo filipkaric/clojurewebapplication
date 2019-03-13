@@ -1,7 +1,13 @@
 # clojurewebapplication
 
 A Clojure web application.
-CRUD operations to create meals and daily menus.
+
+Creating menus for a restauraunts that change menus often, or restaurants that have daily or monthly menus and special offers. 
+
+Create a menu, user selects which chef designed the menu, menu type(special, monthly, promotion...), date on which it was created and menu name. Delete and update menu. 
+
+Create, update and delete meals. Every meal has a name, quantity of calories, proteins, carbohydrates, fats ( per 100 grams ) and meal type ( salad, appetizer, drink, soup,dessert,….).
+Showing and printing a menu from the list of all menus. 
 
 ## IDE Used
 
