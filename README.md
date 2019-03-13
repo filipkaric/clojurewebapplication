@@ -15,7 +15,7 @@ IntelliJ IDEA Community Edition 2018.3.1 x64
 
 ## How to start
 
-Type lein ring server in terminal
+Type __lein ring server__ in terminal
 
 ## License
 
