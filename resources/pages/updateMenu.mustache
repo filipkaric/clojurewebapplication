@@ -50,7 +50,7 @@
         </div>
         <div class="form-group">
             <label>Menu type</label>
-            <select name="chef" class="form-control">
+            <select name="type" class="form-control">
                 {{#menu_type}}
                     <option value="{{menu_type_id}}">{{menu_type_name}}</option>
                 {{/menu_type}}
@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             <label>Date created</label>
-            <input id="datepicker" type="text" class="form-control" name="date_created"
+            <input id="datepicker" type="text" class="form-control" name="date_created" required
                    autocomplete="off" value="{{menu.date_created}}"/>
         </div>
         <div class="form-group">

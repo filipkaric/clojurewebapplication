@@ -47,8 +47,7 @@
              (try
              (do (meal-domain/insertMeal params)
                  (resp/redirect "/allMeals"))
-             (catch Exception e (resp/redirect "/error"))
-             ))
+             (catch Exception e (resp/redirect "/error"))))
 
            (GET "/domain/menus/:id/delete" [id]
              (do (menu-domain/deleteMenu id)
