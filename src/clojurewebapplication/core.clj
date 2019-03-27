@@ -25,6 +25,8 @@
            (route/resources "/")
            (GET "/about" [] (controller/about))
            (route/resources "/")
+           (GET "/error" [] (controller/error))
+           (route/resources "/")
 
            (GET "/domain/meals/:id/delete" [id]
              (do (meal-domain/delete id)
@@ -35,12 +37,18 @@
 
 
            (POST "/domain/meals/:meal_id/update" [& params]
+             (try
              (do (meal-domain/update (:meal_id params) params)
-                 (resp/redirect "/allMeals")))
+                 (resp/redirect "/allMeals"))
+             (catch Exception e (resp/redirect "/error"))
+             ))
 
            (POST "/domain/meals/insert" [& params]
+             (try
              (do (meal-domain/insertMeal params)
-                 (resp/redirect "/allMeals")))
+                 (resp/redirect "/allMeals"))
+             (catch Exception e (resp/redirect "/error"))
+             ))
 
            (GET "/domain/menus/:id/delete" [id]
              (do (menu-domain/deleteMenu id)
@@ -50,13 +58,17 @@
              (controller/updateMenu id))
 
            (POST "/domain/menus/:menu_id/update" [& params]
+             (try
              (do (menu-domain/updateMenu (:menu_id params) params)
-                 (resp/redirect "/allMenus")))
+                 (resp/redirect "/allMenus"))
+             (catch Exception e (resp/redirect "/error"))))
 
 
            (POST "/domain/menus/insert" [& params]
+             (try
              (do (menu-domain/insertMenu params)
-                 (resp/redirect "/allMenus")))
+                 (resp/redirect "/allMenus"))
+             (catch Exception e (resp/redirect "/error"))))
 
            (GET "/domain/menus/:id/show" [id]
              (controller/showMenu id))

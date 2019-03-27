@@ -18,6 +18,9 @@
 (defn about []
   (render-template "about" {}))
 
+(defn error []
+  (render-template "errorPage" {}))
+
 (defn allMeals []
   (render-template "meals" {:meal (meal-domain/allMeals)
                             :meal_type (meal-domain/allMealTypes)}))

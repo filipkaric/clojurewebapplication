@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
-
+    <!--DatePicker-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -39,10 +42,10 @@
 <!-- Content -->
 <div class="col-md-3 center">
     <h3>Insert menu</h3>
-    <form action="/domain/menus/insert" method="post">
+    <form name="menuForm" action="/domain/menus/insert" onsubmit="return validateMenuForm()" method="post">
         <div class="form-group">
             <label>Menu name</label>
-            <input type="text" class="form-control" name="name"/>
+            <input type="text" class="form-control" name="name" maxlength="255" required/>
         </div>
         <div class="form-group">
             <label>Menu type</label>
@@ -54,7 +57,7 @@
         </div>
         <div class="form-group">
             <label>Date created</label>
-            <input type="text" class="form-control" name="date_created"/>
+            <input id="datepicker" type="text" class="form-control" name="date_created" autocomplete="off"/>
         </div>
         <div class="form-group">
             <label>Chef</label>
@@ -69,6 +72,12 @@
 </div>
 <!-- Bootstrap -->
 <script src="scripts/js/bootstrap.js" ></script>
+<script src="scripts/js/customValidation.js" ></script>
 <link rel="stylesheet" href="scripts/css/clojure.css">
 </body>
 </html>
+<script>
+$( function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+  } );
+</script>
